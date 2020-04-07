@@ -1,19 +1,15 @@
 {
-  "name": "coolnodeapp",
+  "name": "MEAN",
   "version": "1.0.0",
-  "description": "node app ",
+  "description": "A MEAN app that allows users to manage contact lists",
   "main": "app.js",
   "scripts": {
-  "start": "node app.js"
-},
-  "repository": {
-  "type": "git",
-  "url": ""
-},
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-  "url": ""
-},
-  "homepage": ""
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.13.3",
+    "express": "^4.13.3",
+    "mongodb": "^2.1.6"
+  }
 }
