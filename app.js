@@ -1,7 +1,7 @@
-const express=require('node_modules/express');
-const bodyParser=require('.node_modules/body-parser');
-const mongoose=require('node_modules/mongoose');
-const cors=require('node_modules/cors');
+const express=require('express');
+const bodyParser=require('body-parser');
+const mongoose=require('mongoose');
+const cors=require('cors');
 const API=express();
 const LoginDetails=require('models/LoginDetails');
 const Updates=require('models/Updates');
