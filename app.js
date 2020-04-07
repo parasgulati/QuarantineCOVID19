@@ -96,5 +96,5 @@ API.post('/update',(req,res,next)=>{
 });
     
 
- var port = config.PORT || 3000;
+ var port =process.env.PORT || 3000;
  API.listen(port)
