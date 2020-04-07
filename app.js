@@ -62,7 +62,7 @@ API.post('/login',(req,res,next)=>{
         }
         else
         {
-            if(data==null)
+            if(data.length==0)
             {
                 res.status(200).json({       
                     message:'not'   
