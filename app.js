@@ -3,8 +3,8 @@ const bodyParser=require('body-parser');
 const mongoose=require('mongoose');
 const cors=require('cors');
 const API=express();
-const LoginDetails=require('backend/models/LoginDetails.js');
-const Updates=require('backend/models/Updates.js');
+const LoginDetails=require('./backend/models/LoginDetails.js');
+const Updates=require('./backend/models/Updates.js');
 
 mongoose.connect('mongodb+srv://COVID19:covidindia19@cluster-jqfui.mongodb.net/test?retryWrites=true&w=majority',{'useUnifiedTopology':true})
 .then(()=>{
