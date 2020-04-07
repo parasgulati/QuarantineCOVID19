@@ -3,8 +3,8 @@ const bodyParser=require('body-parser');
 const mongoose=require('mongoose');
 const cors=require('cors');
 const API=express();
-const LoginDetails=require('./models/LoginDetails');
-const Updates=require('./models/Updates');
+const LoginDetails=require('models/LoginDetails');
+const Updates=require('models/Updates');
 mongoose.connect('mongodb+srv://COVID19:covidindia19@cluster-jqfui.mongodb.net/test?retryWrites=true&w=majority',{'useUnifiedTopology':true})
 .then(()=>{
     console.log('database connected');
