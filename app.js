@@ -1,10 +1,10 @@
-const express=require('/node_modules/express');
-const bodyParser=require('/node_modules/body-parser');
-const mongoose=require('/node_modules/mongoose');
-const cors=require('/node_modules/cors');
+const express=require('node_modules/express');
+const bodyParser=require('.node_modules/body-parser');
+const mongoose=require('node_modules/mongoose');
+const cors=require('node_modules/cors');
 const API=express();
-const LoginDetails=require('/models/LoginDetails');
-const Updates=require('/models/Updates');
+const LoginDetails=require('models/LoginDetails');
+const Updates=require('models/Updates');
 
 mongoose.connect('mongodb+srv://COVID19:covidindia19@cluster-jqfui.mongodb.net/test?retryWrites=true&w=majority',{'useUnifiedTopology':true})
 .then(()=>{
