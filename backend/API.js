@@ -5,8 +5,7 @@ const cors=require('cors');
 const API=express();
 const LoginDetails=require('./models/LoginDetails');
 const Updates=require('./models/Updates');
-const db=process.env.MONGODB_URL;
-mongoose.connect(db,{'useUnifiedTopology':true})
+mongoose.connect('mongodb+srv://COVID19:covidindia19@cluster-jqfui.mongodb.net/test?retryWrites=true&w=majority',{'useUnifiedTopology':true})
 .then(()=>{
     console.log('database connected');
 })
