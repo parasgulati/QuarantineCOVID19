@@ -1,5 +1,5 @@
 const http=require('http');
-const api=require('/backend/API.js');
+const api=require('backend/API.js');
 const port=process.env.PORT;
 api.set('port',port);
 const server=http.createServer(api);
