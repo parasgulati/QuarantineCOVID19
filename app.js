@@ -71,7 +71,14 @@ API.post('/login',(req,res,next)=>{
             }
             else
             {
-                res.send(data);
+                res.status(200).json({
+                    message:'yes',
+                    username:data.username,
+                    lat:data.lat,
+                    longitude:data.longitude,
+                    imagePath:data.imagePath
+                });
+                res.send();
             }
         }
      });
