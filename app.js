@@ -34,7 +34,7 @@ API.post('/signup',(req,res,next)=>{
         }
         else
         {
-            if(data.length==0)
+            if(data==null)
             {
                 details.save();
                 res.status(200).json({       
