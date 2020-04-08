@@ -23,7 +23,7 @@ API.post('/signup',(req,res,next)=>{
     var details=new LoginDetails({
         username:post.username,
         password:post.password,
-        lat:post.lattitude,
+        lat:post.lat,
         longitude:post.longitude,
         imagePath:post.imagePath
     });
