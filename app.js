@@ -71,9 +71,6 @@ API.post('/login',(req,res,next)=>{
             }
             else
             {
-                res.status(200).json({
-                    message:'ok'
-                });
                 res.send(data);
             }
         }
