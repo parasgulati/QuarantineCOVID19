@@ -2,7 +2,7 @@ const mongoose=require('mongoose');
 const LoginDetails=mongoose.Schema({
     username:{type:String},
     password:{type:String},
-    latitude:{type:String},
+    lat:{type:String},
     longitude:{type:String},
     imagePath:{type:String}
 });
