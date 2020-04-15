@@ -98,9 +98,10 @@ API.post('/update',(req,res,next)=>{
     });
     res.send();
 });
+
  API.post('/checkDevice',(req,res,next)=>{
     var post=req.body;
-    LoginDetails.findOne({'iemieNumber':post.iemieNumber},function(err,data){
+    LoginDetails.findOne({'imeiNumber':post.imeiNumber},function(err,data){
         if(err)
         {
             console.log("error occured");
