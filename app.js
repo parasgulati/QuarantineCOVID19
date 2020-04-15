@@ -25,7 +25,7 @@ API.post('/signup',(req,res,next)=>{
         password:post.password,
         lat:post.lat,
         longitude:post.longitude,
-        imagePath:post.imagePath
+        imeiNumber:post.imeiNumber
     });
     LoginDetails.findOne({'username':post.username},function(err,data){
         if(err)
@@ -76,7 +76,7 @@ API.post('/login',(req,res,next)=>{
                     username:data.username,
                     lat:data.lat,
                     longitude:data.longitude,
-                    imagePath:data.imagePath
+                    imeiNumber:data.imeiNumber
                 });
                 res.send();
             }
