@@ -59,7 +59,7 @@ API.post('/login',(req,res,next)=>{
         username:post.username,
           imeiNumber:post.imeiNumber
     });
-    LoginDetails.findOne({'username':post.username,'password':post.password},function(err,data){
+    LoginDetails.findOne({'username':post.username,'password':post.password,'imeiNumber':post.imeiNumber},function(err,data){
         if(err)
         {
             console.log("error occured");
