@@ -4,6 +4,6 @@ const LoginDetails=mongoose.Schema({
     password:{type:String},
     lat:{type:String},
     longitude:{type:String},
-    iemieNumber:{type:String}
+    imeiNumber:{type:String}
 });
 module.exports =mongoose.model("LoginDetails",LoginDetails);
