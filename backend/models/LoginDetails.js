@@ -4,6 +4,6 @@ const LoginDetails=mongoose.Schema({
     password:{type:String},
     lat:{type:String},
     longitude:{type:String},
-    imagePath:{type:String}
+    iemieNumber:{type:String}
 });
 module.exports =mongoose.model("LoginDetails",LoginDetails);
