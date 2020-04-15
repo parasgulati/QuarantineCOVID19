@@ -98,7 +98,33 @@ API.post('/update',(req,res,next)=>{
     });
     res.send();
 });
-    
+ API.post('/checkDevice',(req,res,next)=>{
+    var post=req.body;
+    LoginDetails.findOne({'iemieNumber':post.iemieNumber},function(err,data){
+        if(err)
+        {
+            console.log("error occured");
+        }
+        else
+        {
+            if(data==null)
+            {
+                res.status(200).json({       
+                    message:'not'   
+                });
+                res.send();
+            }
+            else
+            {
+                res.status(200).json({
+                    message:'yes'
+                });
+                res.send();
+            }
+        }
+     });
+});
+
 
  var port =process.env.PORT;
  API.listen(port)
