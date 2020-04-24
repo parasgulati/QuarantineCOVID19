@@ -21,10 +21,16 @@ API.use(bodyParser.urlencoded({extended: false}));
 API.post('/signup',(req,res,next)=>{
     var post=req.body;
     var details=new LoginDetails({
+        name:post.name,
         username:post.username,
         password:post.password,
         lat:post.lat,
         longitude:post.longitude,
+        state:post.state,
+        city:post.city,
+        pincode:post.pincode,
+        locality:post.locality,
+        district:post.district,
         imeiNumber:post.imeiNumber
     });
     LoginDetails.findOne({'username':post.username},function(err,data){
