@@ -1,5 +1,6 @@
 const mongoose=require('mongoose');
 const LoginDetails=mongoose.Schema({
+    name:{type:String},
     username:{type:String},
     password:{type:String},
     lat:{type:String},
