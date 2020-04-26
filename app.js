@@ -160,6 +160,86 @@ API.post('/LoginCheck',(req,res,next)=>{
      });
 });
 
+API.post('/searchPatients',(req,res,next)=>{
+    var post=req.body;
+    var state,city,pincode,locality,district,quarantine,status;
+    if(post.state==null)
+        state=0;
+    else
+        state=1;
+    
+    if(post.city==null)
+        city=0;
+    else
+        city=1;
+    
+    if(post.pincode==null)
+        pincode=0;
+    else
+        pincode=1;
+    
+    if(post.locality==null)
+        locality=0;
+    else
+        locality=1;
+    
+    if(post.district==null)
+        district=0;
+    else
+        district=1;
+    
+    if(post.quarantine==null)
+        quarantine=0;
+    else
+        quarantine=1;
+    
+    if(post.status==null)
+        status=0;
+    else
+        status=1;
+    
+    var json={};
+    
+    if(state==1)
+        json['state']=state;
+    if(city==1)
+        json['city']=city;
+    if(pincode==1)
+        json['pincode']=pincode;
+    if(locality==1)
+        json['locality']=locality;
+    if(district==1)
+        json['district']=district;
+    if(quarantine==1)
+        json['quarantine']=quarantine;
+    if(status==1)
+        json['status']=status;
+     
+    var details=new LoginDetails(json);
+    LoginDetails.findOne(json,function(err,data){
+        if(err)
+        {
+            console.log("error occured");
+        }
+        else
+        {
+            if(data==null)
+            {
+                res.status(200).json({       
+                    message:'Not Found'   
+                });
+                res.send();
+            }
+            else
+            {
+                res.status(200).json({
+                    message:'Found'
+                });
+                res.send(data);
+            }
+        }
+     });
+});
 
  var port =process.env.PORT;
  API.listen(port)
