@@ -201,19 +201,19 @@ API.post('/searchPatients',(req,res,next)=>{
     var json={};
     
     if(state==1)
-        json['state']=state;
+        json['state']=post.state;
     if(city==1)
-        json['city']=city;
+        json['city']=post.city;
     if(pincode==1)
-        json['pincode']=pincode;
+        json['pincode']=post.pincode;
     if(locality==1)
-        json['locality']=locality;
+        json['locality']=post.locality;
     if(district==1)
-        json['district']=district;
+        json['district']=post.district;
     if(quarantine==1)
-        json['quarantine']=quarantine;
+        json['quarantine']=post.quarantine;
     if(status==1)
-        json['status']=status;
+        json['status']=post.status;
      res.send(json);
     /*
     var details=new LoginDetails(json);
