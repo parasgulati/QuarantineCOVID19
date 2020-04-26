@@ -163,37 +163,37 @@ API.post('/LoginCheck',(req,res,next)=>{
 API.post('/searchPatients',(req,res,next)=>{
     var post=req.body;
     var state,city,pincode,locality,district,quarantine,status;
-    if(post.state==null)
+    if(post.state=='')
         state=0;
     else
         state=1;
     
-    if(post.city==null)
+    if(post.city=='')
         city=0;
     else
         city=1;
     
-    if(post.pincode==null)
+    if(post.pincode=='')
         pincode=0;
     else
         pincode=1;
     
-    if(post.locality==null)
+    if(post.locality=='')
         locality=0;
     else
         locality=1;
     
-    if(post.district==null)
+    if(post.district=='')
         district=0;
     else
         district=1;
     
-    if(post.quarantine==null)
+    if(post.quarantine=='')
         quarantine=0;
     else
         quarantine=1;
     
-    if(post.status==null)
+    if(post.status=='')
         status=0;
     else
         status=1;
@@ -215,8 +215,7 @@ API.post('/searchPatients',(req,res,next)=>{
     if(status==1)
         json['status']=post.status;
     
-    var details=new LoginDetails(json);
-    LoginDetails.findOne(json,function(err,data){
+    LoginDetails.find(json,function(err,data){
         if(err)
         {
             console.log("error occured");
@@ -232,14 +231,36 @@ API.post('/searchPatients',(req,res,next)=>{
             }
             else
             {
-                res.status(200).json({
-                    message:'Found'
-                });
                 res.send(data);
             }
         }
      });
 });
+
+API.post('/PatientUpdates',(req,res,next)=>{
+    var post=req.body;
+  Updates.find({'username':post.username},function(err,data){
+        if(err)
+        {
+            console.log("error occured");
+        }
+        else
+        {
+            if(data==null)
+            {
+                res.status(200).json({       
+                    message:'Not Found'   
+                });
+                res.send();
+            }
+            else
+            {
+                res.send(data);
+            }
+        }
+});
+});
+
 
  var port =process.env.PORT;
  API.listen(port)
