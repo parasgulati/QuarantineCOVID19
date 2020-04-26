@@ -215,7 +215,7 @@ API.post('/searchPatients',(req,res,next)=>{
     if(status==1)
         json['status']=post.status;
      res.send(json);
-    /*
+    
     var details=new LoginDetails(json);
     LoginDetails.findOne(json,function(err,data){
         if(err)
@@ -239,7 +239,7 @@ API.post('/searchPatients',(req,res,next)=>{
                 res.send(data);
             }
         }
-     });*/
+     });
 });
 
  var port =process.env.PORT;
