@@ -214,7 +214,6 @@ API.post('/searchPatients',(req,res,next)=>{
         json['quarantine']=post.quarantine;
     if(status==1)
         json['status']=post.status;
-     res.send(json);
     
     var details=new LoginDetails(json);
     LoginDetails.findOne(json,function(err,data){
